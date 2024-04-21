@@ -1,0 +1,72 @@
+#box{
+
+    background-color: rgb(139, 197, 197);
+    width: 400px;
+    height: 440px;
+    border-radius: 20px ;
+    box-shadow: 6px 6px 5px black;
+    img{
+        padding-top:-40px;
+        padding-left: 200px;
+        height: 100px;
+        width:100px;
+    }
+    label{
+        font-size: large;
+        font-weight: 900;
+        padding-left: 12px;
+    }
+    input{
+        background-color: rgb(88, 245, 114);
+        color: brown;
+        height: 30px;
+        border-radius: 5px;
+
+    }
+    button{
+        background-color: rgb(20, 248, 58);
+        color: brown;
+        height: 25px;
+        border-radius: 10px;
+    }
+    button:hover{
+        height: 30px;
+        background-color: rgb(186, 238, 238);  
+    }
+}
+.box{
+    text-align: center;
+}
+body{
+    background-image:linear-gradient( 70deg , rgb(122, 236, 137), rgb(87, 223, 105),rgb(21, 206, 46)) ;
+}
+#container{
+    padding-left: 20%;
+    display: grid;
+    gap: 10%;
+    margin-top: 5%;
+    justify-content:start;
+    grid-template-columns: 400px 100px;
+    grid-template-rows: auto;
+
+}
+#content:hover , #box:hover{
+    border: 3px solid greenyellow;
+}
+#content{
+   
+    background-color: rgb(139, 197, 197);
+
+
+    border-radius: 20px ;
+    box-shadow: 6px 6px 5px black;
+}
+h1{
+    font-style:italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 3px 2px 4px rgb(16, 17, 15);
+}
+h2{
+    font-style:italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

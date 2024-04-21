@@ -1,0 +1,70 @@
+#box{
+    background-color:rgb(85, 82, 245);
+
+    width: 400px;
+    height: 440px;
+    border-radius: 20px ;
+    box-shadow: 6px 6px 5px black;
+    margin-left:35%;
+    margin-top: 5%;
+    
+    label{
+        font-size: large;
+        font-weight: 900;
+        padding-left: 12px;
+    }
+    input{
+        background-color: rgb(195, 146, 228);
+        color: brown;
+        height: 30px;
+        border-radius: 5px;
+    }
+    button{
+        background-color: rgb(171, 6, 248);
+        color: rgb(14, 1, 1);
+        height: 25px;
+        border-radius: 10px;
+    }
+    button:hover{
+        height: 30px;
+        background-color: rgb(186, 238, 238);  
+    }
+}
+body{
+    background-image:linear-gradient( 70deg , rgb(75, 57, 240),rgb(52, 55, 238),rgb(43, 116, 226)) ;
+}
+h1{
+    font-style:italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(8, 255, 160);
+    text-shadow: 3px 2px 4px rgb(16, 17, 15);
+}
+h2{
+    color: rgb(115, 255, 0);
+    font-style:italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#container{
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto ;
+}
+#ans{
+
+    background-color:rgb(85, 82, 245);
+    width: 400px;
+    height: 440px;
+    border-radius: 20px ;
+    box-shadow: 6px 6px 5px black;
+    margin-top: 5%;
+    p{ 
+        font-size: larger;
+        width: fit-content;
+        /* background-color: aqua; */
+        text-align:center;
+        margin-top: 37px;
+    }
+
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="salary.js"></script>
+    <link rel="stylesheet" href="salary.css">
+    <title>Salary calculator</title>
+</head>
+<body>
+   <center><h1>Salary &nbsp;<img src="salary.png" alt="">  &nbsp;Calculator</h1> </center>
+   <div id="container">
+        <div id="box">
+            <br> 
+      <center> <h2>Your details </h2> </center>  
+    <br>
+            <form action="">
+                <label for=""> Hourly Rate</label>
+                <center>     <input type="number" id="hourly rate" placeholder="salary per hour"></center> 
+                     <br>
+                <label for="">Hours / Day</label>
+        <center>   <input type="number" id="hours per day" placeholder=" Numer of hours in a day "></center> 
+            <br>      
+            <label for="">Days / week</label>
+            <center> <input type="number" id="days per week" placeholder="Number of days in the week"></center> 
+                 <br>
+        </form>
+        <center><button onclick="cal()">Calculate</button> 
+        <button onclick="clr()">clear</button> </center>       
+        </div>
+
+        <div id="ans">
+         <center>  <h2>Your Salary Details</h2></center> 
+            <p id="hs"> Hourly Salary :</p>
+            <p id="ds"> daily Salary :</p>
+            <p id="ws"> weekly Salary :</p>
+            <p id="ms"> monthly Salary :</p>
+            <p id="ys"> yearly Salary :</p>
+        
+        </div>
+    </div>
+</body>
+</html>

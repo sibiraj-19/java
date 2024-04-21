@@ -1,0 +1,87 @@
+body{
+    display: flex;
+    justify-content:space-around;
+    background-image: linear-gradient( 300deg,black,rgb(88, 84, 84));
+    background-attachment:fixed ;
+    background-size:cover;
+}
+#login{
+    
+    background-color:rgb(100, 94, 94) ;
+    width: fit-content;
+   height: 270px;
+    padding: 2%;
+   margin-top: 12%;
+   margin-left: 2%;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 0.9;
+ box-shadow: 17px 17px 4px black;
+   
+}
+.no::placeholder{
+    color: brown;
+}
+#login:hover{
+ border-radius: 20px 0px 20px 0px ;
+ background-color:rgb(75, 73, 73) ;
+ .no{
+    background-color:rgb(75, 73, 73) ;
+} 
+.no::placeholder{
+    color: rgb(15, 5, 24);
+ }
+}
+#sub{
+    background-color: rgb(116, 112, 112);
+    box-sizing: content-box;
+    border-radius: 6px;
+}
+.no{
+    border-width:0px;
+    outline:none;
+    background-color:rgb(100, 94, 94) ;
+
+  color: rgb(47, 224, 171);
+}
+#sub:hover{
+    background-color: gray;
+}
+img{
+  margin-top: 300px;
+   margin-left: 1000px;
+    width: 20%;
+    
+    position: absolute;
+}
+
+
+#reg{
+    background-color:rgb(100, 94, 94) ;
+
+    width: 250px;
+   height: 370px;
+    padding: 2%;
+   margin-top: 10%;
+   margin-left: 2%;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 0.9;
+ box-shadow: 17px 17px 4px black;
+}
+#reg:hover{
+    border-radius: 20px 0px 20px 0px ;
+    background-color:rgb(133, 117, 117) ;
+    .no{
+        background-color:rgb(133, 117, 117) ;
+ }  
+ .no::placeholder{
+    color: rgb(15, 5, 24);
+ }
+}
+
+.i1{
+    margin-top: 350px;
+    margin-left: -1000px;
+     width: 15%;
+     height: 260px; 
+     position: absolute;
+}

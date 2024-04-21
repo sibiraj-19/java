@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+}
+#men{
+background-color: aquamarine;
+display: flex;
+flex-direction: row;
+justify-content: center;
+row-gap:30px;
+position:relative;
+
+}

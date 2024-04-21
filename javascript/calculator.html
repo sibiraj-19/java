@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+<div id="calculator">
+    
+
+</div>
+
+
+
+    <Script>
+    a=parseInt (prompt("Enter number 1"))
+b=parseInt (prompt("Enter number 2"))
+c=prompt("Enter the operation")
+
+   switch (c){
+    case "+": {
+        ans=a + b
+        document.write(ans)
+        break
+    }
+    case "-":{
+        ans=a - b
+        document.write(ans)
+        break
+    }
+    case "*":{
+        ans=a * b
+        document.write(ans)
+        break
+    }
+    case "/":{
+        ans=a / b
+        document.write(ans)
+        break
+    }
+    case "%" :{
+        ans=a % b
+        document.write(ans)
+      break
+    }
+    case "**":
+        ans=a ** b
+        document.write(ans)
+        break
+  }
+</Script>
+</body>
+</html>

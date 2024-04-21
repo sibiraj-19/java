@@ -1,0 +1,84 @@
+#box{
+    background-color:rgb(166, 82, 245);
+    width: 400px;
+    height: 440px;
+    border-radius: 20px ;
+    box-shadow: 6px 6px 5px black;
+    margin-left:35%;
+    margin-top: 5%;
+    grid-row: 1/3;
+    label{
+        font-size: large;
+        font-weight: 900;
+        padding-left: 12px;
+    }
+    input{
+        background-color: rgb(195, 146, 228);
+        color: brown;
+        height: 30px;
+        border-radius: 5px;
+    }
+    button{
+        background-color: rgb(253, 105, 233);
+        color: brown;
+        height: 25px;
+        border-radius: 10px;
+    }
+    button:hover{
+        height: 30px;
+        background-color: rgb(186, 238, 238);  
+    }
+}
+body{
+    background-image:linear-gradient( 70deg , rgb(152, 57, 240),rgb(147, 63, 226),blueviolet) ;
+}
+h1{
+    font-style:italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 8, 255);
+    text-shadow: 3px 2px 4px rgb(16, 17, 15);
+}
+h2{
+    color: brown;
+    font-style:italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#container{
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+
+.box2{
+    background-color: rgb(161, 90, 228);
+    height: 180px;
+    width: 400px;
+    margin-top: 40px;
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: start;
+    border-radius: 20px;
+    box-shadow: 6px 6px 5px black
+}
+.box1{
+    background-color: rgb(161, 90, 228);
+
+    height: 200px;
+    width: 400px;
+    margin-top: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 6px 6px 5px black;
+}
+.box1:hover ,.box2:hover,#box:hover{
+    border: 3px solid rgb(250, 5, 250);
+}
+p{
+    font-weight: bolder;
+    font-size: large;
+}
+img{
+    height: 60px;
+}

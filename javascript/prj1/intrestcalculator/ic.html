@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intrest calculator </title>
+    <link rel="stylesheet" href="ic.css">
+    <script src="ic.js"></script>
+    
+</head>
+<body>
+    <center><h1>INTREST <img src="download.png" alt="" style="height: 30px;"> CALCULATOR </h1> </center>
+    
+    <div id="box">
+        <div id="si">
+            <h4>Simple Interest</h4>  
+    
+        <label for="">principle Amount</label><br>
+        <input type="number" id="principle" placeholder="" required> <br>
+
+        <label for="">Number of years</label><br>
+        <input type="number" id="numberofyears" placeholder=""required> <br>
+
+        <label for="">Rate of Intrest</label><br>
+        <input type="number" id="rateofintrest" placeholder=""required> <br> <br>
+    
+     <center>  <button onclick="simpleintrest()" >calculate</button> 
+        <button onclick="clr()">Clear</button>
+        <p id="result"></p></center> 
+        </div>
+
+        <div id="ci">
+  <h4>  Compound Interest</h4> 
+
+    <label for="">principle Amount</label><br>
+
+    <input type="number" id="principle1" placeholder="" required> <br>
+    <label for="">Number of years</label><br>
+
+    <input type="number" id="numberofyears1" placeholder=""required> <br>
+    <label for="">Rate of Intrest</label><br>
+
+    <input type="number" id="rateofintrest1" placeholder=""required> <br>
+    <label for="">Time in Years</label><br>
+
+    <input type="number" id="timeinyears1"  placeholder="" required> <br> <br>
+    <button onclick="compundintrest()" >calculate</button> 
+    <button onclick="clr()">Clear</button>
+
+    <p id="result1"></p>
+
+        </div>
+
+       
+    </div>
+</body>
+</html>

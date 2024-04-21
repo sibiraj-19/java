@@ -1,0 +1,75 @@
+body{
+    background-image:linear-gradient( 70deg , rgb(205, 236, 122), rgb(144, 221, 55),rgb(182, 238, 50)) ;
+ 
+}
+h1{
+    color: rgb(9, 8, 17);
+    text-shadow: 2px 2px 4px rgb(16, 20, 3);
+}
+#box{
+    font-size:20px;
+    font-style:italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin:100px;
+    padding: 30px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: auto;
+    /* width: fit-content; */
+    gap: 50px;
+    /* background-color: blueviolet; */
+}
+#si{
+    input{
+        background-color: rgb(103, 185, 117);
+        border-radius: 10px 5px 10px 5px ; 
+    }
+    border-radius: 20px;
+    box-shadow: 7px 7px 3px rgb(48, 47, 47);    
+    text-align: center;
+    background-color: rgb(185, 243, 214);
+
+
+    button{
+        border-radius: 20px;
+        background-color: rgb(133, 243, 151);
+        color: brown;
+    }
+    button:hover{
+        height: 30px;
+        background-color: rgb(186, 238, 238);  
+    }
+
+}
+#ci{
+    input{
+        background-color: rgb(103, 185, 117);   
+       border-radius: 10px 5px 10px 5px ; 
+    }
+    border-radius: 20px;
+    box-shadow: 7px 7px 3px rgb(48, 47, 47);    
+    text-align: center;
+    background-color: rgb(185, 243, 214);
+
+    button{
+        border-radius: 20px;
+        background-color: rgb(133, 243, 151);
+        color: brown; 
+
+    }
+    button:hover{
+        height: 30px;
+        background-color: rgb(186, 238, 238);  
+    }
+}
+
+#si:hover{
+    box-shadow: 5px 5px 3px rgb(48, 47, 47);
+    border: 3px solid black;
+}
+#ci:hover{
+    box-shadow: 5px 5px 3px rgb(48, 47, 47);
+
+    border: 3px solid black;
+}

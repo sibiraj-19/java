@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPF Calculator</title>
+    <link rel="stylesheet" href="ppf.css">
+    <script src="ppf.js"></script>
+</head>
+<body>
+   <center> <h1>PPF &nbsp;<img src="ppf.png" alt=""> &nbsp;Calcutor</h1></center>
+   <div id="container">
+    <div id="box">
+        <br> 
+  <center> <h2>To Calculate </h2> </center>  
+<br><br>
+        <form action="">
+            <label for="">Yearly Interest</label>
+    <center>   <input type="number"  id="Yearly Interest" placeholder="Enter Your Yearly Interest"></center> 
+        <br>
+        <label for="">Time Period</label>
+   <center>     <input type="number" id="Time Period" placeholder="Enter Your Time Period"></center> 
+        <br>
+        <label for="">Rate Of Interest</label>
+   <center>     <input type="number" id="Rate Of Interest" placeholder="Enter Your Rate Of Interest"></center> 
+        <br>
+    </form>
+    <center>     <button onclick="cal()">Calculate</button>
+        <button onclick="clr()">Clear</button>
+    </div>
+    <div id="box1">
+        <div class="box1">
+            <h2>Your Maturity Amount Is</h2>
+        <p id="ppf" ></p></center>  
+    </div>
+    </div>
+    <div id="box2">
+        <div class="box2">
+        <center><h2>Your Values</h2></center>
+            <p id="yi"> Yearly Interest is </p>
+             <p id="no">Number Of Years is </p>
+            <p id="ri">Rate Of Interest is </p>
+            
+        </div>
+    </div>
+   </div>
+</body>
+</html>

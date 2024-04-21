@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Mass Index</title>
+    <script src="bmi.js"></script>
+    <link rel="stylesheet" href="bmi.css">
+    
+</head>
+<body>
+   <center ><h1> BMI <img src="images-removebg-preview.png" style="height: 50px;"> CALCULATOR</h1></center>
+    <div id="container">
+        <div id="content">
+  <center> <h2>BMI</h2> </center>  
+
+          <p style="text-align: start; padding: 50px; font-size: large; font-weight: 900; color: rgb(24, 24, 26);"> Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women. <br> <br>It's calculated by dividing a person's weight in kilograms by the square of their height in meters. <br> <br>Here's the formula:
+           
+<br><br>
+BMI=weight in kilograms / <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height in meters 2</p> 
+
+
+     </div>
+    <div id="box">
+        <br> 
+  <center> <h2>To Calculate </h2> </center>  
+       
+<br><br>
+         
+        <form action="">
+            <label for="">Weight</label>
+    <center>   <input type="number" id="weight" placeholder=" Weight in Kilograms"></center> 
+        <br>
+        <label for="">Height</label>
+   <center>     <input type="number" id="height" placeholder="Height in Centi meters"></center> 
+        <br>
+    </form>
+    <center>     <button onclick="cal()">Calculate</button>
+        <button onclick="clr()">Clear</button>
+        <p id="bmi"></p></center>  
+     <marquee behavior="" direction="left"><img src="images__1_-removebg-preview.png" alt=""></marquee>   
+    
+    </div>
+    </div>
+</body>
+</html>
