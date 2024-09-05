@@ -1,0 +1,59 @@
+import java .util.*;
+public class Main{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    
+    int ar[][]=new int [3][3];
+    int br[]=new int [3];
+    String c="";
+    int sum=0,max=0,d=0,e=0,sum1=0,avg=0;
+    for(int i=0;i<3;i++){
+      for(int j=0;j<3;j++){
+      ar[i][j]=sc.nextInt();
+      
+      
+    }
+    }
+    for(int i=0;i<3;i++){
+      for(int j=0;j<3;j++){
+        // if(ar[j][i]<1&&ar[j][i]>100){
+        //   System.out.print("INVALID INPUT");
+        // }
+        
+        sum+=ar[j][i];
+        sum1+=ar[j][i];
+      }
+      br[i]=sum;
+     avg=sum1/3;
+    // while(avg>0){
+    // if(avg<70){
+      
+    //   // break;
+    // }
+       
+    // }
+      sum=0;
+    
+    // System.out.print(br[i]+" ");}
+    }
+    for(int i=0;i<3;i++){
+      if(br[i]>max){
+        max=br[i];
+        d=i+1;}
+       
+      }
+      for(int i=0;i<3;i++){
+        if(br[i]==max&&i!=d-1){
+          e=i+1;
+        }
+      }
+    if(Math.round(avg)<70)  {
+      System.out.print("All trainees are unfit.");
+    }
+   else{ 
+    System.out.println(d);
+    if(e>0){
+    System.out.println(e);}
+   }
+  }
+}

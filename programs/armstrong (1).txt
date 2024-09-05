@@ -1,0 +1,25 @@
+import java.util.*;
+class Main
+{
+    public static void main(String arg[])
+    {
+        Scanner you=new Scanner(System.in);
+        int c=0;
+        int i=you.nextInt();
+        int a=i;
+        String j=Integer.toString(i);
+        int l=j.length();
+        while(a>0)
+        {
+            int b=a%10;
+            c+=(int)Math.pow(b,l);
+            a=a/10;
+        }
+        if(c==i){
+            System.out.println("Armstrong number");
+        }
+        else{
+            System.out.println("Not Armstrong number");
+        }
+}
+}

@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the student type");
+      String st=sc.nextLine();
+     
+      if(st.equals("MSDS"))
+      {
+            System.out.println("Enter tuition fee");
+            System.out.println("Enter bus fee");
+          float tf=sc.nextFloat();
+          float bf=sc.nextFloat();
+          System.out.printf("The fees to be paid by the student is Rs.%.2f",(tf+bf));
+      }
+      else if(st.equals("MSH"))
+      {
+          
+           System.out.println("Enter tuition fee");
+            System.out.println("Enter hostel fee");
+           float tf=sc.nextFloat();
+          float hf=sc.nextFloat();
+          System.out.printf("The fees to be paid by the student is Rs.%.2f",(tf+hf));
+      }
+       else if(st.equals("MGSDS"))
+      {
+           System.out.println("Enter tuition fee");
+            System.out.println("Enter bus fee");
+           float tf=sc.nextFloat();
+          float bf=sc.nextFloat();
+          System.out.printf("The fees to be paid by the student is Rs.%.2f",((1.5*tf)+bf));
+      }
+      
+       else if(st.equals("MGSH"))
+      {
+           System.out.println("Enter tuition fee");
+            System.out.println("Enter hostel fee");
+           float tf=sc.nextFloat();
+          float hf=sc.nextFloat();
+          System.out.printf("The fees to be paid by the student is Rs.%.2f",((1.5*tf)+hf));
+      }
+      else
+      {
+          System.out.print("invalid input");
+      }
+      
+      
+    }
+}

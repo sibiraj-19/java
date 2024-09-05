@@ -1,0 +1,14 @@
+import java.util.Scanner;
+class Main
+{
+public static void main(String args[])
+
+{
+    Scanner sc= new Scanner (System.in);
+    int num=sc.nextInt();
+    int a=(num/10);
+    int b=(num%10);
+    int c=(a+b);
+    System.out.print("Alice must go in path-"+c);
+}
+}

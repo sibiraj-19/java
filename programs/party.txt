@@ -1,0 +1,55 @@
+import java .util.*;
+public class Main{
+  public static void main(String args[]){
+    Scanner sc=new Scanner (System.in);
+    int a =sc.nextInt();
+    int e[]=new int[a];
+    int l[]=new int [a];
+    int d=0,max=0,f=0,g=0;
+    if(a>=1&&a<=50){
+    for(int i=0;i<a;i++){
+      e[i]=sc.nextInt();
+    }
+    for(int i=0;i<a;i++){
+      l[i]=sc.nextInt();
+    }
+    for(int i=0;i<a;i++){
+     d+=e[i];
+     if(d>max){
+       max=d;
+     }
+     d=d-l[i];
+     
+    }
+    
+    
+      for(int i=2;i<max;i++){
+        
+        if(max%i==0 && max%2!=0){
+          f=1;
+        }
+        if(max%i==0 && max%2==0){
+          g=1;
+        }
+        
+       
+      }
+    
+    
+   
+    if(f==1){
+      System.out.print("Party is cancelled");
+    }
+    else if(g==1){
+      System.out.print("Party is cancelled");
+    }
+    else{
+      System.out.print("Party is going on");
+    }
+   
+    }
+    else{
+      System.out.print("INVALID INPUT");
+    }
+  }
+}

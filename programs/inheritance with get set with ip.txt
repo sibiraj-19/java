@@ -1,0 +1,107 @@
+import java.util.*;
+ 
+class placement
+{
+    String name;
+   void setname (String a)
+  {
+    
+    name = a;
+  }
+  String getname ()
+  {
+    return name;
+  }
+}
+
+class core extends placement
+{
+    int emark1,emark2;
+   void setlnt (int b)
+  {
+    emark1 = b;
+  }
+   int getlnt ()
+  {
+    return emark1;
+  }
+   void setphilips (int e)
+  {
+emark2 =e;
+  }
+  int getphilips ()
+  {
+return emark2;
+  }
+ 
+ 
+}
+
+class it extends core
+{ 
+    int pakage1,pakage2;
+   
+   void settcs (int c)
+  {
+    pakage1 = c;
+  }
+   int gettcs ()
+  {
+return pakage1;
+  }
+  
+    void setcts (int d)
+  {
+    pakage2= d;
+  }
+ 
+  int getcts ()
+  {
+return pakage2;
+  }
+}
+
+
+public class Main
+{
+  public static void main (String args[])
+  {
+     Scanner sc=new Scanner (System.in);
+     String name=sc.nextLine();
+     int lnt=sc.nextInt();
+     int philips=sc.nextInt();
+     int tcs=sc.nextInt();
+     int cts=sc.nextInt();
+      
+    it m = new it ();
+      m.setname (name);
+      m.setlnt (lnt);                         //multilevel
+      m.setphilips (philips);
+      m.settcs (tcs);
+       m.setcts (cts);
+      System.out.println(m.getname());
+       System.out.println(m.getlnt());
+       System.out.println(m.getphilips());
+        System.out.println(m.gettcs());
+        System.out.println(m.getcts());
+      
+  }
+
+}
+
+hierarchial:
+
+ it m = new it ();
+      m.setname (name);
+      m.settcs (tcs);
+       m.setcts (cts);
+       core n=new core();
+      n.setlnt (lnt);
+      n.setphilips (philips);
+      
+      System.out.println(m.getname());
+       System.out.println(n.getlnt());
+       System.out.println(n.getphilips());
+        System.out.println(m.gettcs());
+        System.out.println(m.getcts());
+      

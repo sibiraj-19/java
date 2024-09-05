@@ -1,0 +1,13 @@
+import java.util.*;
+ public class Main
+{
+    public static void main(String args[])
+    {
+      scanner sc=new Scanner(System.in);
+      int br=sc.nextInt();
+      int yr=sc.nestInt();
+      float ri=sc.nextFloat();
+      float si=(br*yr*ri)/100;
+      system.out.printf(".%2f",si);
+    }
+}

@@ -1,0 +1,15 @@
+import java.util.*;
+ public class Main
+{
+    public static void main(String args[])
+    {
+      scanner sc=new Scanner(System.in);
+      int a=sc.nextInt();
+      int l=sc.nestInt();
+       int b=sc.nestInt();
+      float r=sc.nextFloat();
+        system.out.println(a*a);
+	 system.out.println(l*b);
+      system.out.printf(".%2f",3.14f*r*r);
+    }
+}

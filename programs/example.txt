@@ -1,0 +1,55 @@
+import java.util.*;
+class teacher{
+    String name;
+    int age;
+    public void setname(String a){
+        name=a;
+    }
+    public void setage(int b){
+        age=b;
+    }
+    public String getname(){
+        return name;
+    }
+    public int getage(){
+        return age;
+    }
+}
+class student extends teacher{
+    String sname;
+    int sage;
+    public void setstdname(String c){
+        sname=c;
+    }
+    public void setstdage(int b){
+        sage =b;
+    }
+     public String getstdname(){
+        return sname;
+    }
+    public int getstdage(){
+        return sage;
+    }
+    
+}
+public class Main{
+    public static void main (String args[]){
+        Scanner sc=new Scanner (System.in);
+     
+        String name=sc.nextLine();
+        int age=sc.nextInt();
+        String sname=sc.nextLine();
+        int sage=sc.nextInt();
+           student m=new student();
+       
+        m.setname(name);
+        m.setage(age);
+        m.setstdname(sname);
+        m.setstdage(sage);
+        System.out.println(m.getname());
+        System.out.println(m.getage());
+        System.out.println(m.getstdname());
+        System.out.println(m.getstdage());
+        
+    }
+}e

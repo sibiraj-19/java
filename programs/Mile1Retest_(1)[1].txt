@@ -1,0 +1,664 @@
+1. String Concatenation: Given 2 strings input1 & input2,
+	i. Concatenate both the strings.
+	ii. Remove duplicate alphabets and white spaces.
+	iii. Arrange the alphabets in descending order.
+
+Assumption 1: There will either be alphabets, white spaces or null in both the inputs.
+Assumption 2: Both the inputs will be in lower case.
+Note: If any one of the input is empty or null, output should be "null".
+
+Example 1:
+Input 1: apple
+Input 2: orange
+Output : rponlgea
+
+Example 2:
+Input 1: fruits
+Input 2: are good
+Output : utsroigfeda
+
+Example 3:
+Input 1: ""
+Input 2: ""
+Output : null
+
+package jannath;
+
+import java.util.Arrays;
+
+public class Appleandorange {
+	public static String stringConcatenation(String input1,String input2) {
+		input1=input1.replaceAll(" ", "");
+		input2=input2.replaceAll(" ","");
+		if(input1.isEmpty()||input2.isEmpty())
+			return ("null");
+		StringBuffer sb1=new StringBuffer(input1+input2);
+		for(int i=0;i<sb1.length();i++) {
+			for(int j=i+1;j<sb1.length();j++) {
+				if(sb1.charAt(i)==sb1.charAt(j))
+					sb1.deleteCharAt(j);
+			}
+		}
+		String ans="";
+		String req=sb1.toString();
+		char[] ch=req.toCharArray();
+		Arrays.sort(ch);
+		for(int i=ch.length-1;i>=0;i--) {
+			ans+=(ch[i]);
+		}
+		return (ans);
+	}
+	public static void main(String[] args) {
+		System.out.println(stringConcatenation("",""));
+	}
+}
+
+
+========================================================================================================
+
+2. Count the vowels
+Given a string input1 which is a single word of length n(n ranges from 1 to 20). You have to find whether input1 contains all the vowels (a,e,i,o,u) in it and all of them occurs only once.
+If both condition satisfies, you need to remove thosee (a,e,i,o,u) from input1 and return the output as "new word without (a,e,i,o,u) in it: length of the new word"
+return the output as "reversed input1:ERROR".
+Note: 
+1. input1 is always a single word with no spaces in it.
+2. input1 will contain only lower case alphabets.
+3. output should be in uppercase.
+
+Example1:
+input1: cauliflower
+output: CLFLWR:6
+Explanation: input1 has all the vowels (a,e,i,o,u) in it and everything occurs only once.
+
+Example2:
+input1: arsenious
+output: RSNS:4
+Explanation: input1 has all the vowels (a,e,i,o,u) in it and everything occurs only once.
+
+Example3:
+input1: caesiious
+
+public class Countvowel {
+	public static String CounttheVowels(String input1) {
+		StringBuffer sb=new StringBuffer(input1);
+		int[] a=new int[26];
+		for(int i=0;i<sb.length();i++) {
+			if(sb.charAt(i)=='a'||sb.charAt(i)=='e'||sb.charAt(i)=='i'||sb.charAt(i)=='o'||sb.charAt(i)=='u')
+				a[sb.charAt(i)-97]++;
+		}
+		int cnt=0;
+		for(int i=0;i<a.length;i++) {
+			if(a[i]>0) {
+				if(a[i]==1)
+					cnt++;
+			}
+		}
+		String ans="";
+		int cnt1=0;
+		if(cnt==5) {
+			for(int i=0;i<sb.length();i++) {
+				if(sb.charAt(i)=='a'||sb.charAt(i)=='e'||sb.charAt(i)=='i'||sb.charAt(i)=='o'||sb.charAt(i)=='u')
+					continue;
+				else {
+					ans+=sb.charAt(i);
+					cnt1++;
+				}
+			}
+			ans+=":"+Integer.toString(cnt1);
+			return (ans.toUpperCase());
+		}
+		else {
+			sb.reverse();
+			ans+=sb.toString().toUpperCase()+":"+"ERROR";
+			return ans;
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println(CounttheVowels("Cauliflower"));
+	}
+
+}
+
+========================================================================================================
+
+3. Find the sum of Common alphabets - Lower
+Given two char arrays input1[] and input2[] containing only lower case alphabets, extract the alphabets which are present in both arrays (common alphabets).
+Get the ascii values of all the extracted alphabets.
+Calculate the sum of those ascii values. Lets call it sum1 and calculate single digit sum of sum1, i.e. keep adding the digits of sum1 until you arrive at a single digit.
+Return that single digit as output.
+Note: 
+1. Array size ranges from 1 to 10.
+2. All the array elements are lower case alphabets.
+3. Atleast one comman alphabet will be found in the arrays.
+
+Example 1:
+input1: {'a','b','c'}
+input2: {'b','c'}
+output:
+98+99=197
+1+9+7=17
+1+7=8
+
+
+public class CommonLower {
+	public static int SumofCommonAlpha(char[] input1,char[] input2) {
+		int count=0;
+		for(int i=0;i<input1.length;i++) {
+			for(int j=0;j<input2.length;j++) {
+				if(input1[i]==input2[j]) {
+					count+=input1[i];
+				}
+			}
+		}
+		return allsum(count);
+	}
+	public static int allsum(int n) {
+		int sum=0;
+		while(n>0||sum>9) {
+			if(n==0) {
+				n=sum;
+				sum=0;
+			}
+			sum+=n%10;
+			n=n/10;
+		}
+		return sum;
+	}
+	public static void main(String[] args) {
+		char[] input1= {'p','q','r'};
+		char[] input2= {'r','c'};
+		System.out.println(SumofCommonAlpha(input1,input2));
+	}
+}
+
+========================================================================================================
+
+4. Find the Order
+Given two Strings input1 and input2 consisting of random alphabets, find whether all the alphabets in input1 are in either increasing or decreasing order based on their ascii value.
+For Example, 
+input1="ACZa", its in increasing order. {65,67,90,97}
+input2="tbGB", its in decreasing order. {116,98,71,66}
+In case if input1 is not in either increasing or decreasing order. directly return invalid.
+After deciding input1 as increasing or decreasing: consider input2 which consists of the same alphabets which are in input1, but the order of the alphabets may change.
+
+For Example,
+input1="ACZa" input2="CAZa" here 'C' and 'A' are misplaced in input2, so the count of alphabets which are misplaced is 2
+input1="tbGB" input2="tGBb" here 'G','B','b' are misplaced in input2, so the count of alphabets which are misplaced is 3
+Expected output format: <Increasing or Decreasing> :count of alphabets which are misplaced in input2
+
+public class FindTheOrder {
+	//FIND ORDER OF WORD EITHER INCREASING OR DECREASING THEN FOLLOW STEPS
+		public static void main(String[] args) {
+			String s1="lLkQwfg";
+			String s2="QwlLkfg";
+			System.out.println(findTheOrder(s1,s2));}
+		
+			 static String findTheOrder(String input1,String input2) {
+				 //WRITE FROM HERE
+			String ans="";
+			int cnt=0;
+			if(checkIncreasing(input1))
+				ans+="Increasing:";
+			if(checkDecreasing(input1))
+				ans+="Decreasing:";
+			if(checkIncreasing(input1)||checkDecreasing(input1)) {
+				for(int i=0;i<input1.length();i++ ) {
+					if(in  \put1.charAt(i)!=input2.charAt(i))
+						cnt++;
+				}
+				ans+=Integer.toString(cnt);
+				return(ans);
+			}
+			else
+				return("Invalid");
+
+		}
+		public static boolean checkIncreasing(String s) {
+			int cnt=0;
+			for(int i=0;i<s.length()-1;i++) {
+				if(s.charAt(i)<=s.charAt(i+1))
+					cnt++;
+				else
+					break;
+			}
+			if(cnt==s.length()-1)
+				return true;
+			else
+				return false;
+		}
+		public static boolean checkDecreasing(String s) {
+			int cnt=0;
+			for(int i=0;i<s.length()-1;i++) {
+				if(s.charAt(i)>=s.charAt(i+1))
+					cnt++;
+				else
+					break;
+			}
+			if(cnt==s.length()-1)
+				return true;
+			else
+				return false;
+		}
+
+	}
+
+
+========================================================
+
+5. First and Last vowel character Strings
+As a logic building learner you are given the task to extract the string which has vowel as the First and Last characters from the given array of Strings.
+Step1: Scan through the array of strings. Extract the strings with first and last characters as vowels: these strings should be concatenated
+Step2: convert the concatenated string to lower case and return it.
+If none of the strings in the array has first and last character as vowel, then return no matches found
+
+Prototype: String findStringVowelFirstAndLast(int input1, String[] input2)
+input1: an integer representing the number of elements in the array
+input2: String array
+
+Example1- 
+input1: 3
+input2: {"oreo","sirish","apple"}
+output: oreoapple
+
+Example2-
+input1: 2
+input2: {"Mango","banana"}
+output: no matches found
+
+Explanation: None of the Strings has first and last character as vowel, hence the output is no matches found.
+
+
+public class FirstandLastVowel {
+	public static String firstAndLastVowelCharacter(int input1,String []input2) {
+		String st2="",st3="";
+		for(int i=0;i<input1;i++) {
+			st2=input2[i];
+			st2=st2.toLowerCase();
+			if((st2.charAt(0)=='a'||st2.charAt(0)=='e'||st2.charAt(0)=='i'||st2.charAt(0)=='o'||st2.charAt(0)=='u')&&(st2.charAt(st2.length()-1)=='a'||st2.charAt(st2.length()-1)=='e'||st2.charAt(st2.length()-1)=='i'||st2.charAt(st2.length()-1)=='o'||st2.charAt(st2.length()-1)=='u'))
+				st3+=st2;
+		}
+		if(st3.isEmpty())
+			return ("no matches found");
+		else
+			return (st3);
+	}
+	public static void main(String[] args) {
+		String a[]= {"Mango","banana"};
+		System.out.println(firstAndLastVowelCharacter(2,a));
+	}
+
+}
+
+========================================================
+
+7. Find the sum - Uncommon Alphabets - Uppercase
+Given two char Arrays input1[] and input2[] which contains only uppercase alphabets,
+
+Step1: Extract the alphabets which are present only in any one of the array(uncommon alphabets)
+Step2: Get the ascii values of all the extracted alphabets.
+Step3: Calculate the sum of those ascii values, lets us call it as sum1 and single digit sum for sum1
+i.e. keep adding the digits of sum1 until you arrive at a single digit.
+Step4: Return the single digit as output.
+
+Note:
+1. Array size ranges from 1 to 15.
+2. All the array elements are upper case alphabets.
+
+Example1:
+input1={'A', 'B', 'C'}
+input2={'B', 'C'}
+output: 65 =>6+5=11
+	=>1+1=2
+
+Explanation:
+'A' is present only in one of the array.
+Ascii value of 'A' is 65.
+
+public class UncommonUpper {
+	public static int uncommon(char[] input1,char[] input2)
+	{
+		int sum=0;
+		int sum1=0;
+		String s="";
+		for(int i=0;i<input1.length;i++)
+		{
+			s+=input1[i];
+
+		}
+		for(int i=0;i<input2.length;i++)
+		{
+			s+=input2[i];
+		}
+		for(int i=0;i<s.length();i++) {
+			int c=0;
+			for(int j=0;j<s.length();j++)
+			{
+				if(s.charAt(i)==s.charAt(j))
+				{
+					c++;
+				}
+				if(c==1)
+				{
+					sum+=s.charAt(i);
+				}
+				int n=sum;
+				while(n>0)
+				{
+					sum1=0;
+					while(n>0)
+					{
+						int rem=n%10;
+						sum1+=rem;
+						n/=10;
+					}
+					if(sum1>9)
+					{
+						n=sum1;
+					}
+
+				}
+
+			}
+
+		}
+		return(sum1);
+	}
+	public static void main(String args[])
+	{
+		char[] input1= {'A','B','C'};
+		char[] input2= {'B','C'};
+		System.out.println(uncommon(input1,input2));
+	}
+}
+
+========================================================
+
+8. Find Key:
+You are provided with 3 numbers: Input1, Input2 and Input3
+Each of these are four digit numbers within the range>=1000 and <= 9999 i.e
+1000<= input1 <= 9999
+1000<= input2 <= 9999
+1000<= input3 <= 9999
+
+You are expected to find the Key using the below formula.
+
+Key=(Hundreds digit of input1 x Tens digit of input2) x (Largest digit of input3)
+For eg. if input1=3521, input2=2452, input3=1352, then Key=(5x5)x5=125
+
+Assuming that the 3 numbers are passed to the given function, Complete the function to find and return the Key.
+
+import java.util.Arrays;
+
+public class Key125 {
+	public static int key(int input1,int input2,int input3) {
+		int a=(input1/100)%10;
+		int b=(input2/10)%10;
+		int[] c= {input3/1000,input3%10,(input3/10)%10,(input3/100)%10};
+		Arrays.sort(c);
+		int key=(a*b)*c[3];
+		return key;
+	}
+	public static void main(String[] args) {
+		int input1=3521;
+		int input2=2452;
+		int input3=1352;
+		System.out.println(key(input1,input2,input3));
+	}
+
+}
+
+
+=======================================================================================================================================================================
+
+9. Find Key:
+You are provided with 3 numbers: Input1, Input2 and Input3
+Each of these are four digit numbers within the range>=1000 and <= 9999 i.e
+1000<= input1 <= 9999
+1000<= input2 <= 9999
+1000<= input3 <= 9999
+
+You are expected to find the Key using the below formula.
+
+Key=(Thousands digit of input1 x Hundreds digit of input2) + (Smallest digit of input3)
+For eg. if input1=3521, input2=2452, input3=1352, then Key=(3x4)+1=13
+
+Assuming that the 3 numbers are passed to the given function, Complete the function to find and return the Key.
+
+import java.util.Arrays;
+
+public class Key13 {
+	public static int key_13(int input1,int input2,int input3) {
+		int a=input1/1000;
+		int b=(input2/100)%10;
+		int[] c= {(input3/1000),(input3%10),(input3/100)%10,(input3/10)%10};
+		Arrays.sort(c);
+		int key=(a*b)+c[0];
+		return key;
+	}
+	public static void main(String[] args) {
+		int input1=3521;
+		int input2=2452;
+		int input3=1352;
+		System.out.println(key_13(input1,input2,input3));
+	}
+
+}
+
+=======================================================================================================================================================================
+
+10. Form the Word
+Given a String input1, which contains many number of words seperated by : and each word contains exactly two lower case alphabets, generate an output based upon the below 2 cases.
+
+Note:
+1. All the character in input1 are lower case alphabets
+2. input1 will always contain more than one word seperated by :
+3. Output should be returned in UpperCase.
+
+Case 1:
+Check whether the two alphabets are same.
+If yes then take one alphabets from it and add it to the output.
+
+Example-1
+input1=ww:ii:pp:rr:oo
+output=WIPRO
+
+Explanation
+word1 is ww, both are same hence take w
+word2 is ii, both are same hence take i
+word3 is pp, both are same hence take p
+word4 is rr, both are same hence take r
+word5 is oo, both are same hence take o
+Hence the output is WIPRO
+
+Case 2: If the two alphabets are not same, then find the position value of them and find maximum value - minimum value.
+
+Take the alphabet which comes at this (maximum value - minimum value) position in the alphabet series.
+
+Example-2
+input1=zx:za:ee
+output=BYE
+Explanation
+word1 is zx, both are not same alphabets
+position value of z is 26
+position value of x is 24
+max-min will be 26-24=2
+Alphabet which comes in 2nd position is b.
+
+word2 is za, both are not same alphabets
+position value of z is 26
+position value of a is 1
+max-min will be 26-1=25
+Alphabet which comes in 25th position is y
+
+word3 is ee, both are same hence take e
+Hence the output is BYE
+
+
+public class Wipro {
+	public static void main(String[] args) {
+		String s="zx:za:ee";
+		System.out.println(formtheword(s));
+	}
+	public static String formtheword(String input1) {
+		String[] a=input1.split(":");
+		String ans="";
+		for(int i=0;i<a.length;i++) {
+			if(a[i].charAt(0)==a[i].charAt(1))
+				ans+=a[i].charAt(0);
+			else
+				ans+=(char)((a[i].charAt(0)-a[i].charAt(1))+96);
+		}
+		return (ans.toUpperCase());
+	}
+
+}
+
+=========================================================================================================================
+
+11. Character or Sumter
+
+Example 1:
+input1=1W2i3p4r5o6
+input2=0
+output=21
+Explanation: Since input2 is 0, consider reading only digits and sum up them. 1+2+3+4+5+6=21. Hence output would be 21, in form of string.
+
+Example 2:
+input1=1W2i3p4r5o6
+input2=1
+output=Wipro
+Explanation: Since input2 is 1, consider reading only alphabets. Hence output would be Wipro.
+
+Example 3:
+input1=12345
+input2=1
+output=ZERO
+Explanation: Since input2 is 1, consider reading only alphabets. But input1 does not contain alphabets. Hence output would be ZERO.
+
+Example 4:
+input1=PBL
+input2=0
+output=ZERO
+Explanation: Since input2 is 0, consider reading only digits. But input1 does not contain digits. Hence output would be ZERO.
+
+
+public class CharorSum {
+	public static String findCharOrDigitSum(String input1,int input2) {
+		String st="";
+		if(input1.isEmpty())
+			return "NULL";
+		if(input1==null && input2==1)
+			return "NULL";
+		int sum=0;
+		for(int i=0;i<input1.length();i++) {
+			if(Character.isDigit(input1.charAt(i))) {
+				sum+=(input1.charAt(i)-48);
+			}
+			else if(Character.isAlphabetic(input1.charAt(i))) {
+				st+=input1.charAt(i);
+			}
+		}
+		if(st.isEmpty()&&input2==1||sum==0&&input2==0) {
+			return "ZERO";
+		}
+		if(input2==0) {
+			return Integer.toString(sum);
+		}
+		else
+			return st;
+	}
+	public static void main(String[] args) {
+		String input1="PBL";
+		int input2=0;
+		System.out.println(findCharOrDigitSum(input1,input2));
+	}
+
+}
+
+
+=========================================================================================================================
+
+12. Position Based Sum
+You are Provided with a set of numbers (array of numbers).
+You have to generate the sum of specific numbers based on its position in the array set provided to you.
+This is explained below-
+
+Example1: Let us assume the encoded set of numbers given to you is input1: {1,51,436,7860,41236}
+
+Step1: Starting from the 0th index of the array pick up digits as per below:
+0th index - pick up the units value of the number (in this case is 1)
+1st index - pick up the tens value of the number (in this case it is 5)
+2nd index - pick up the hundreds value of the number (in this case it is 4)
+3rd index - pick up the thousands value of the number (in this case it is 7)
+4th index - pick up the ten thousands value of the number (in this case it is 4)
+(Continue this for all the elements of the input array)
+The array generated from step1 will then be - {1,5,4,7,4}
+
+Step2: Square each number present in the array generated in step1
+{1,25,16,49,16}
+
+Step3: Calculate the sum of all elements of the array generated in step2 to get the final result. The result will be = 107
+
+public class PositionBasedSum {
+	public static int positionBasedSum(int[] input1) {
+		int[] a=new int[input1.length];
+		int sum=0;
+		for(int i=0;i<a.length;i++) {
+			a[i]=check(i,input1[i]);
+			a[i]=(a[i]*a[i]);
+			sum+=a[i];
+		}
+		return sum;
+	}
+	public static int check(int i,int n) {
+		String s=Integer.toString(n);
+		if(s.length()==i+1)
+			return (s.charAt(0)-48);
+		else
+			return 0;
+	}
+	public static void main(String[] args) {
+		int[] a= {1,51,436,7860,41236};
+		System.out.println(positionBasedSum(a));
+	}
+}
+
+=========================================================================================================================
+
+13. Find Key:
+You are provided with 3 numbers: input1,input2 and input3
+Each of these are four digit numbers within the range >=1000 and <=9999
+i.e.
+1000<=input1<=9999
+1000<=input2<=9999
+1000<=input3<=9999
+
+You are expected to find the key using the below formula-
+
+Key=(Sum of Smallest digits of all the 3 numbers) - (Sum of Largest digits of all the 3 numbers)
+For e.g. If input1=3521,input2=2452 and input3=1352, then key=(1+2+1) - (5+5+5) = -11
+
+Assuming that the 3 numbers are passed to the given functions,Complete the function to find and return the Key.
+
+import java.util.Arrays;
+
+public class Key11 {
+	public static int key_11(int input1,int input2,int input3) {
+		int[] a= {(input1/1000),(input1%10),(input1/100)%10,(input1/10)%10};
+		int[] b= {(input2/1000),(input2%10),(input2/100)%10,(input2/10)%10};
+		int[] c= {(input3/1000),(input3%10),(input3/100)%10,(input3/10)%10};
+		Arrays.sort(a);
+		Arrays.sort(b);
+		Arrays.sort(c);
+		int key=(a[0]+b[0]+c[0])-(a[3]+b[3]+c[3]);
+		return key;
+	}
+	public static void main(String[] args) {
+		int input1=3521;
+		int input2=2452;
+		int input3=1352;
+		System.out.println(key_11(input1,input2,input3));
+	}
+}
+
+=========================================================================================================================

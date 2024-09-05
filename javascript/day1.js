@@ -1,6 +1,0 @@
-console.log("hi")
-console.info("info")
-console.assert("assert")
-console.count("count")
-console.count("count")
-console.error("error")

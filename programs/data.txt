@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        
+            if(a==299){
+            System.out.println("data is 1gb\n100 sms\n100 calls");
+            
+        }
+        else if(a==399)
+        {
+            System.out.println("data is 1.5gb\n100 sms\n100 calls");
+            
+        }
+       else if(a==499)
+        {
+            System.out.println("data is 2gb\n100 sms\n100 calls");
+        }
+        else
+        {
+            System.out.print("the pakage is not available");
+        }
+        }
+        }
+        
+    

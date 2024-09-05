@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+      Scanner sc=new Scanner(System.in);
+      float cp=sc.nextFloat();
+      float sp=sc.nextFloat();
+     float tsp=sp*12;
+     float am= tsp-cp;
+     float km=cp-tsp;
+      if (tsp>cp)
+      {
+          System.out.printf("Profit : Rs.%.2f",am);
+      }
+      else if(tsp<cp)
+      {
+          System.out.printf("Loss : Rs.%.2f",km);
+      }
+      else
+      {
+          System.out.println("No profit nor Loss");
+      }
+    }
+}

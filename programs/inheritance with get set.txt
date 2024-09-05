@@ -1,0 +1,85 @@
+import java.util.*;
+ 
+class placement
+{
+    String name;
+   void setname (String a)
+  {
+    
+    name = a;
+  }
+  String getname ()
+  {
+    return name;
+  }
+}
+
+class core extends placement
+{
+    int emark1,emark2;
+   void setlnt (int b)
+  {
+    emark1 = b;
+  }
+   int getlnt ()
+  {
+    return emark1;
+  }
+   void setphilips (int e)
+  {
+emark2 =e;
+  }
+  int getphilips ()
+  {
+return emark2;
+  }
+ 
+ 
+}
+
+class it extends core
+{ 
+    int pakage1,pakage2;
+   
+   void settcs (int c)
+  {
+    pakage1 = c;
+  }
+   int gettcs ()
+  {
+return pakage1;
+  }
+  // System.out.println("colour is white");
+    void setcts (int d)
+  {
+    pakage2= d;
+  }
+ 
+  int getcts ()
+  {
+return pakage2;
+  }
+}
+
+
+public class Main
+{
+  public static void main (String args[])
+  {
+     
+      
+    it m = new it ();
+      m.setname ("sibi");
+      m.setlnt (89);
+      m.setphilips (87);
+      m.settcs (77);
+       m.setcts (67);
+      System.out.println(m.getname());
+       System.out.println(m.getlnt());
+       System.out.println(m.getphilips());
+        System.out.println(m.gettcs());
+        System.out.println(m.getcts());
+      
+  }
+
+}
